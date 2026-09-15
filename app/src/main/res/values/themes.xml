@@ -1,0 +1,7 @@
+<resources>
+    <style name="Theme.GwentMusic" parent="android:Theme.Material.NoActionBar">
+        <item name="android:statusBarColor">#131110</item>
+        <item name="android:navigationBarColor">#131110</item>
+        <item name="android:windowBackground">#131110</item>
+    </style>
+</resources>

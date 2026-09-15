@@ -1,0 +1,33 @@
+import groovy.json.JsonOutput
+import org.gradle.api.artifacts.component.ModuleComponentIdentifier
+import org.gradle.maven.MavenModule
+import org.gradle.maven.MavenPomArtifact
+
+gradle.projectsEvaluated {
+    def app = gradle.rootProject.project(':app')
+    app.tasks.register('publicationDependencyInventory') {
+        doLast {
+            def conf = app.configurations.getByName('releaseRuntimeClasspath')
+            def ids = conf.incoming.resolutionResult.allComponents.collect { it.id }
+                .findAll { it instanceof ModuleComponentIdentifier }
+            def query = app.dependencies.createArtifactResolutionQuery().forComponents(ids)
+                .withArtifacts(MavenModule, MavenPomArtifact).execute()
+            def poms = [:]
+            query.resolvedComponents.each { component ->
+                component.getArtifacts(MavenPomArtifact).each { artifact ->
+                    if (artifact instanceof org.gradle.api.artifacts.result.ResolvedArtifactResult) {
+                        poms[component.id.displayName] = artifact.file.absolutePath
+                    }
+                }
+            }
+            def artifacts = conf.resolvedConfiguration.resolvedArtifacts.collect { artifact ->
+                [coordinate: artifact.moduleVersion.id.toString(), file: artifact.file.absolutePath]
+            }
+            def result = [components: ids.collect { [coordinate: it.displayName, pom: poms[it.displayName]] }, artifacts: artifacts]
+            def dest = app.layout.buildDirectory.file('reports/publication-dependencies.json').get().asFile
+            dest.parentFile.mkdirs()
+            dest.text = JsonOutput.prettyPrint(JsonOutput.toJson(result))
+            println "Dependency inventory: ${ids.size()} components, ${artifacts.size()} artifacts; ${dest}"
+        }
+    }
+}

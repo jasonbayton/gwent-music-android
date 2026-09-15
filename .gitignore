@@ -1,0 +1,21 @@
+*.iml
+.gradle/
+.kotlin/
+/local.properties
+/.idea/
+/build/
+/app/build/
+/captures/
+.externalNativeBuild/
+.cxx/
+*.apk
+*.keystore
+# never commit provisioned secrets
+secrets.properties
+
+# Go build output
+mockserver/gmcmock
+
+# Python timing-report helper
+__pycache__/
+.DS_Store

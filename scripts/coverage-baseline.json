@@ -1,0 +1,12 @@
+{
+  "overall": {"LINE": 47, "BRANCH": 44},
+  "org/bayton/gmc/data": {"LINE": 72},
+  "org/bayton/gmc/data/auth": {"LINE": 48},
+  "org/bayton/gmc/data/cache": {"LINE": 90},
+  "org/bayton/gmc/notify": {"LINE": 95},
+  "org/bayton/gmc/update": {"LINE": 70},
+  "org/bayton/gmc/ui/home/HomeViewModel.kt": {"LINE": 85},
+  "org/bayton/gmc/ui/schedule/ScheduleViewModel.kt": {"LINE": 94},
+  "org/bayton/gmc/ui/messages/MessagesViewModel.kt": {"LINE": 97},
+  "org/bayton/gmc/ui/account/AccountViewModel.kt": {"LINE": 83}
+}

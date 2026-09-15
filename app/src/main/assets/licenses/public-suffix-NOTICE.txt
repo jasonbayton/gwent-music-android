@@ -1,0 +1,13 @@
+Note that public_suffix_list.dat is compiled from The Public Suffix List:
+https://publicsuffix.org/list/public_suffix_list.dat
+
+It is subject to the terms of the Mozilla Public License, v. 2.0:
+https://mozilla.org/MPL/2.0/
+
+Corresponding source for the dataset distributed with OkHttp Android 5.5.0:
+https://github.com/square/okhttp/tree/a94bdf152084d11acecd44dcd09ffef203f4f0aa/okhttp/src/jvmTest/resources/okhttp3/internal/publicsuffix
+
+Compilation source:
+https://github.com/square/okhttp/blob/a94bdf152084d11acecd44dcd09ffef203f4f0aa/okhttp/src/jvmTest/kotlin/okhttp3/internal/publicsuffix/PublicSuffixListGenerator.kt
+
+The bundled dataset is unchanged from that upstream release.
