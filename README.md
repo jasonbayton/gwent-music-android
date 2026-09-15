@@ -23,6 +23,23 @@ credential.
 The optional CDN updater is documented in [UPDATER.md](UPDATER.md), including its
 release workflow and removal instructions.
 
+## Screenshots
+
+Seeded mock data, no real information. Light and dark are the app's own in-app theme.
+
+<table>
+  <tr>
+    <td align="center"><img src="docs/screenshots/home_light.png" width="220" alt="Home, light"><br>Home (light)</td>
+    <td align="center"><img src="docs/screenshots/home_dark.png" width="220" alt="Home, dark"><br>Home (dark)</td>
+    <td align="center"><img src="docs/screenshots/schedule_light.png" width="220" alt="Schedule"><br>Schedule</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="docs/screenshots/messages_light.png" width="220" alt="Messages"><br>Messages</td>
+    <td align="center"><img src="docs/screenshots/account_light.png" width="220" alt="Account"><br>Account</td>
+    <td align="center"><img src="docs/screenshots/settings_light.png" width="220" alt="Settings"><br>Settings</td>
+  </tr>
+</table>
+
 ## Lesson history
 
 History initially shows up to four recent term groups. **Load more** explicitly adds
